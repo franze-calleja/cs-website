@@ -1,4 +1,4 @@
-:root {
+    :root {
   --maroon: #800000;
   --light-maroon: #A52A2A;
 }
@@ -92,3 +92,30 @@ body {
   border-color: var(--light-maroon);
   color: white;
 }
+.gallery-section {
+            background-color: #800000;
+            padding: 50px 0;
+            overflow: hidden;
+        }
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+            margin-bottom: 30px;
+        }
+        .slider {
+            display: flex;
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+        .slider img {
+            height: 100%;
+            width: auto;
+            margin-right: 10px;
+        }
+        .slider-reverse {
+            flex-direction: row-reverse;
+        }
