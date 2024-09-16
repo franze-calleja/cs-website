@@ -109,6 +109,52 @@
     </div>
   </main>
 
+  <section class="gallery-section">
+    <div class="slider-container">
+        <div class="slider" id="slider1">
+            <img src="assets/images/asta.png" alt="Gallery Image 1">
+            <img src="assets/images/bron.png" alt="Gallery Image 2">
+            <img src="assets/images/luffy.png" alt="Gallery Image 3">
+            <img src="assets/images/asta.png" alt="Gallery Image 4">
+            <img src="assets/images/bron.png" alt="Gallery Image 5">
+            <img src="assets/images/luffy.png" alt="Gallery Image 1">
+            <img src="assets/images/asta.png" alt="Gallery Image 2">
+            <img src="assets/images/bron.png" alt="Gallery Image 3">
+            <img src="assets/images/luffy.png" alt="Gallery Image 4">
+            <img src="assets/images/asta.png" alt="Gallery Image 5">
+            
+        </div>
+    </div>
+    <div class="slider-container">
+        <div class="slider" id="slider2">
+          <img src="assets/images/asta.png" alt="Gallery Image 1">
+          <img src="assets/images/bron.png" alt="Gallery Image 2">
+          <img src="assets/images/luffy.png" alt="Gallery Image 3">
+          <img src="assets/images/asta.png" alt="Gallery Image 4">
+          <img src="assets/images/bron.png" alt="Gallery Image 5">
+          <img src="assets/images/luffy.png" alt="Gallery Image 1">
+          <img src="assets/images/asta.png" alt="Gallery Image 2">
+          <img src="assets/images/bron.png" alt="Gallery Image 3">
+          <img src="assets/images/luffy.png" alt="Gallery Image 4">
+          <img src="assets/images/asta.png" alt="Gallery Image 5">
+        </div>
+    </div>
+    <div class="slider-container">
+        <div class="slider" id="slider3">
+          <img src="assets/images/asta.png" alt="Gallery Image 1">
+          <img src="assets/images/bron.png" alt="Gallery Image 2">
+          <img src="assets/images/luffy.png" alt="Gallery Image 3">
+          <img src="assets/images/asta.png" alt="Gallery Image 4">
+          <img src="assets/images/bron.png" alt="Gallery Image 5">
+          <img src="assets/images/luffy.png" alt="Gallery Image 1">
+          <img src="assets/images/asta.png" alt="Gallery Image 2">
+          <img src="assets/images/bron.png" alt="Gallery Image 3">
+          <img src="assets/images/luffy.png" alt="Gallery Image 4">
+          <img src="assets/images/asta.png" alt="Gallery Image 5">
+        </div>
+    </div>
+</section>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   <script>
     window.addEventListener('scroll', function () {
@@ -121,7 +167,41 @@
         header.classList.add('header-transparent');
       }
     });
+
+
+// Updated infinite slider script for both directions
+function setupInfiniteSlider(sliderId, direction, speed) {
+    const slider = document.getElementById(sliderId);
+    const sliderContent = slider.innerHTML;
+    slider.innerHTML = sliderContent + sliderContent; // Duplicate the content for smooth looping
+
+    let position = 0;
+    const totalWidth = slider.scrollWidth / 2;
+
+    function animate() {
+        // Adjust position based on the direction and speed
+        position += direction * speed / 60;
+
+        // Handle the loop for both left (-1) and right (1) directions
+        if (direction === -1 && Math.abs(position) >= totalWidth) {
+            position = 0; // Reset when moving left and reaching the end
+        } else if (direction === 1 && position >= 0) {
+            position = -totalWidth; // Reset when moving right and reaching the start
+        }
+
+        // Apply the new position
+        slider.style.transform = `translateX(${position}px)`;
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+}
+
+setupInfiniteSlider('slider1', -1, 50);  // Move left
+setupInfiniteSlider('slider2', 1, 40);   // Move right
+setupInfiniteSlider('slider3', -1, 60);  // Move left
+
+
   </script>
 </body>
-
 </html>
