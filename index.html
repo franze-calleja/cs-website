@@ -57,7 +57,7 @@
           <div class="carousel-caption d-none d-md-block">
             <h5>Ako si Asta</h5>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-            <button class="btn btn-maroon btn-sm">Learn More</button>
+            <button class="btn btn-maroon btn-lg">Learn More</button>
           </div>
         </div>
         <div class="carousel-item">
@@ -65,7 +65,7 @@
           <div class="carousel-caption d-none d-md-block">
             <h5>One Piece is the GOAT</h5>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat, quidem.</p>
-            <button class="btn btn-maroon btn-sm">Discover</button>
+            <button class="btn btn-maroon btn-lg">Discover</button>
           </div>
         </div>
         <div class="carousel-item">
@@ -73,7 +73,7 @@
           <div class="carousel-caption d-none d-md-block">
             <h5>LeBron is the GOAT</h5>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam?</p>
-            <button class="btn btn-maroon btn-sm">Explore</button>
+            <button class="btn btn-maroon btn-lg">Explore</button>
           </div>
         </div>
       </div>
@@ -108,6 +108,70 @@
         faucibus vestibulum.</p>
     </div>
   </main>
+
+  <section class="events-list">
+    <div class="container">
+      <h2 class="text-center mb-4">Upcoming Events</h2>
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start event-item" data-bs-toggle="collapse" data-bs-target="#event1">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Team Building</h5>
+            <small>October 2-3, 2024</small>
+          </div>
+          <p class="mb-1">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+          <div class="collapse mt-2" id="event1">
+            <div class="card card-body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta excepturi repudiandae minus perferendis saepe ab vero maiores voluptate vitae non.
+              <br><br>
+              <strong>Location:</strong> EUC Gym
+              <br>
+              <strong>Time:</strong> 8:00 AM - 5:00 PM
+              <br>
+              <strong>Requirements:</strong> None
+            </div>
+          </div>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start event-item" data-bs-toggle="collapse" data-bs-target="#event2">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Computer Science Seminar</h5>
+            <small>November 21, 2024</small>
+          </div>
+          <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea!</p>
+          <div class="collapse mt-2" id="event2">
+            <div class="card card-body">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dicta dolore beatae? Nobis, magnam necessitatibus aperiam odio animi nihil ab?
+              <br><br>
+              <strong>Location:</strong> Baguio City
+              <br>
+              <strong>Time:</strong> 11:00 AM - 5:00 PM
+              <br>
+              <strong>Speaker:</strong> Mr. Azraelu Morningstar
+            </div>
+          </div>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start event-item" data-bs-toggle="collapse" data-bs-target="#event3">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">IT Day</h5>
+            <small>February 20-22, 202t</small>
+          </div>
+          <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse?</p>
+          <div class="collapse mt-2" id="event3">
+            <div class="card card-body">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur tempora vero rem! Delectus doloremque unde ipsam praesentium culpa fugit! Eum!
+              <br><br>
+              <strong>Location:</strong> EUC Gym
+              <br>
+              <strong>Start Time:</strong> August 20, 8:00 AM
+              <br>
+              <strong>End Time:</strong> August 22, 5:00 PM
+              <br>
+              <strong>Registration Deadline:</strong> August 10, 2024
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <section class="gallery-section">
     <div class="slider-container">
@@ -202,6 +266,29 @@ setupInfiniteSlider('slider2', 1, 40);   // Move right
 setupInfiniteSlider('slider3', -1, 60);  // Move left
 
 
+document.addEventListener('DOMContentLoaded', function() {
+      const eventItems = document.querySelectorAll('.event-item');
+      
+      eventItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          // Toggle active class
+          this.classList.toggle('active');
+          
+          // Close other open items
+          eventItems.forEach(otherItem => {
+            if (otherItem !== this && otherItem.classList.contains('active')) {
+              otherItem.classList.remove('active');
+              let collapsibleElement = otherItem.querySelector('.collapse');
+              if (collapsibleElement) {
+                bootstrap.Collapse.getInstance(collapsibleElement).hide();
+              }
+            }
+          });
+        });
+      });
+    });
   </script>
 </body>
+
 </html>
