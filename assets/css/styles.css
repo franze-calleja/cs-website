@@ -1,0 +1,94 @@
+:root {
+  --maroon: #800000;
+  --light-maroon: #A52A2A;
+}
+
+body {
+  color: var(--maroon);
+  padding-top: 80px;
+  /* Increased to account for taller header */
+}
+
+.header {
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.header-transparent {
+  background-color: transparent;
+}
+
+.header-blurry {
+  background-color: rgba(128, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.navbar {
+  padding-top: 15px;
+  /* Increased padding */
+  padding-bottom: 15px;
+  /* Increased padding */
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link {
+  color: var(--maroon);
+  transition: color 0.3s ease;
+}
+
+.header-blurry .navbar-light .navbar-brand,
+.header-blurry .navbar-light .navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: var(--light-maroon);
+}
+
+.header-blurry .navbar-light .navbar-nav .nav-link:hover {
+  color: #FFD700;
+}
+
+.ectg-logo {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.ectg-logo img {
+  height: 80px;
+  /* Adjust this value to your preferred logo height */
+  width: auto;
+  /* Maintain aspect ratio */
+}
+
+.carousel-item {
+  margin-top: 20px;
+  height: 825px;
+  /* Fixed height for all carousel items */
+}
+
+.carousel-item img {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-caption {
+  background-color: rgba(128, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 10px;
+  bottom: 20px;
+}
+
+.btn-maroon {
+  background-color: var(--maroon);
+  border-color: var(--maroon);
+  color: white;
+}
+
+.btn-maroon:hover {
+  background-color: var(--light-maroon);
+  border-color: var(--light-maroon);
+  color: white;
+}
