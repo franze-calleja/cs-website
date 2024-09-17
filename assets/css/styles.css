@@ -62,10 +62,10 @@ body {
 }
 
 .carousel-item {
-  margin-top: 20px;
-  height: 825px;
-  /* Fixed height for all carousel items */
-}
+      margin-top: 20px;
+      height: 80vh; /* Use viewport height for responsiveness */
+      min-height: 300px; /* Minimum height for very small screens */
+    }
 
 .carousel-item::after {
   content: '';
@@ -183,11 +183,11 @@ body {
     .event-item.active h5,
     .event-item.active small,
     .event-item.active p {
-      color: var(--maroon);
+      color: white;
     }
 
     /* Override Bootstrap's default active state */
     .list-group-item.active {
-      background-color: white !important;
+      background-color: maroon !important;
       border-color: rgba(0,0,0,.125);
     }
