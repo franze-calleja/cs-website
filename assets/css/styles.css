@@ -11,11 +11,13 @@ body {
 
 .header {
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.1); /* Very transparent white */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.header-transparent {
-  background-color: transparent;
-}
 
 .header-blurry {
   background-color: rgba(128, 0, 0, 0.8);
@@ -191,3 +193,56 @@ body {
       background-color: maroon !important;
       border-color: rgba(0,0,0,.125);
     }
+
+
+  .ectg-officers {
+    background-color: maroon;
+  }
+  .ectg-officers .card {
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  }
+  .ectg-officers .card:hover {
+    transform: translateY(-5px);
+  }
+  .ectg-officers .card-img-top {
+    height: 250px;
+    object-fit: cover;
+  }
+  .ectg-officers .card-body {
+    background-color: #f8f9fa;
+  }
+  .ectg-officers .card-title {
+    color: maroon;
+    font-weight: bold;
+  }
+  .ectg-officers .card-text {
+    color: #6c757d;
+  }
+
+
+
+  .dsc-officers {
+    background-color: #f8f9fa;
+  }
+  .dsc-officers .card {
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  }
+  .dsc-officers .card:hover {
+    transform: translateY(-5px);
+  }
+  .dsc-officers .card-img-top {
+    height: 250px;
+    object-fit: cover;
+  }
+  .dsc-officers .card-body {
+    background-color: maroon;
+  }
+  .dsc-officers .card-title {
+    color: white;
+    font-weight: bold;
+  }
+  .dsc-officers .card-text {
+    color: white;
+  }
