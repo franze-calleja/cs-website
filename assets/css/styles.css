@@ -1,3 +1,4 @@
+
 :root {
   --maroon: #800000;
   --light-maroon: #A52A2A;
@@ -203,7 +204,7 @@ transition: transform 0.3s ease-in-out;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 .ectg-officers .card:hover {
-transform: scale(1.10);
+  transform: scale(1.10);
 }
 .ectg-officers .card-img-top {
 height: 250px;
@@ -246,3 +247,4 @@ font-weight: bold;
 .dsc-officers .card-text {
 color: white;
 }
+
