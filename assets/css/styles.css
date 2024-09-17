@@ -148,6 +148,7 @@ body {
             flex-direction: row-reverse;
         }
 
+
         .events-list {
       padding: 50px 0;
       background-color: #f8f9fa;
@@ -170,12 +171,23 @@ body {
     }
 
     .event-item.active .card-body {
-      background-color: var(--maroon);
-      color: white;
+      background-color: white;
+      color: var(--maroon);
+    }
+
+    .event-item.active {
+      background-color: white !important;
+      color: var(--maroon);
     }
 
     .event-item.active h5,
     .event-item.active small,
     .event-item.active p {
-      color: white;
+      color: var(--maroon);
+    }
+
+    /* Override Bootstrap's default active state */
+    .list-group-item.active {
+      background-color: white !important;
+      border-color: rgba(0,0,0,.125);
     }
