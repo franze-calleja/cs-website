@@ -203,7 +203,7 @@ transition: transform 0.3s ease-in-out;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 .ectg-officers .card:hover {
-transform: translateY(-5px);
+transform: scale(1.10);
 }
 .ectg-officers .card-img-top {
 height: 250px;
@@ -230,7 +230,7 @@ transition: transform 0.3s ease-in-out;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 .dsc-officers .card:hover {
-transform: translateY(-5px);
+transform: scale(1.10);
 }
 .dsc-officers .card-img-top {
 height: 250px;
