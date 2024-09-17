@@ -164,7 +164,7 @@ body {
     }
 
 .event-item:focus{
-    background-color: #fff;
+    background-color: #fff !important ;
 }
 
     .event-item .card-body {
