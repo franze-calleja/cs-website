@@ -183,4 +183,5 @@ body {
     .event-item.active small,
     .event-item.active p {
       color: white;
+        background-color: #fff !important ;
     }
