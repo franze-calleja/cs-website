@@ -6,7 +6,6 @@
 
 body {
 color: var(--maroon);
-padding-top: 80px;
 /* Increased to account for taller header */
 }
 
@@ -32,9 +31,15 @@ padding-bottom: 15px;
 /* Increased padding */
 }
 
+.navbar-brand{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 .navbar-light .navbar-brand,
 .navbar-light .navbar-nav .nav-link {
-color: var(--maroon);
+
+color: white;
 transition: color 0.3s ease;
 }
 
@@ -65,8 +70,8 @@ width: auto;
 }
 
 .carousel-item {
-  margin-top: 20px;
-  height: 80vh; /* Use viewport height for responsiveness */
+  
+  height: 100vh; /* Use viewport height for responsiveness */
   min-height: 300px; /* Minimum height for very small screens */
 }
 
@@ -92,7 +97,7 @@ width: 100%;
 z-index: 2; /* Ensure caption is above the overlay */
 background-color: transparent; /* Remove the previous background */
 padding: 20px;
-bottom: 50px; /* Adjust as needed */
+top: 23rem; /* Adjust as needed */
 left: 10%;
 right: 10%;
 }
